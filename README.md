@@ -1,2 +1,2 @@
-# visualizaci-n_datos_gov_co
+# visualizacion_datos_gov_co
 Aplicación para visualizar datos.gov.co
