@@ -7,15 +7,15 @@ export default class Visualizacion extends Component {
     this.state = {
       navio: null
     };
-    this.navioInstance = null
+    this.navioInstance = null;
   }
 
-  setElem= (elem) =>{
-    this.navioInstance = navio(elem, 600);
-  }
+  setElem = elem => {
+    if (elem) this.navioInstance = navio(elem, 600);
+  };
 
   componentDidUpdate() {
-    if (this.props.data) {
+    if (this.props.data && this.navioInstance) {
       this.navioInstance.data(this.props.data);
       this.navioInstance.addAllAttribs();
     }
@@ -24,11 +24,9 @@ export default class Visualizacion extends Component {
   render() {
     return (
       <div>
-        <div
-          id="navio"
-          ref={this.setElem}
-          style={{ textAlign: "center" }}
-        ></div>
+        {this.props.error && "Error..."}
+        {this.props.loading && "Cargando..."}
+        <div id="navio" ref={this.setElem}></div>
       </div>
     );
   }

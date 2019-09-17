@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 export default class Visualizacion extends Component {
   constructor(props) {
     super(props);
@@ -15,9 +16,9 @@ export default class Visualizacion extends Component {
     return (
       <div>
         <input type="text" value={this.state.url} onChange={this.onChange} />
-        <button onClick={()=>this.props.onSubmit(this.state.url)}>Cargar</button>
-
-        <div id="navio" ref={elem => (this.navioDiv = elem)}></div>
+        <button onClick={() => this.props.onSubmit(this.state.url)}>
+          Cargar
+        </button>
       </div>
     );
   }

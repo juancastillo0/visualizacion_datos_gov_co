@@ -4,16 +4,19 @@ import NavioDiv from "./NavioDiv";
 
 export default class Main extends Component {
   state = {
-    data: null
+    loading: false,
+    data: null,
+    error: null
   };
 
   onSubmit = async url => {
+    this.setState({ error: null, loading: true });
     try {
       const resp = await fetch(url);
       const data = await resp.json();
-      this.setState({ data });
+      this.setState({ data, loading: false, error: null });
     } catch {
-      console.log("error fetch");
+      this.setState({ error: "error" });
     }
   };
 
@@ -21,7 +24,7 @@ export default class Main extends Component {
     return (
       <div>
         <Visualizacion onSubmit={this.onSubmit} />
-        <NavioDiv data={this.state.data} />
+        <NavioDiv {...this.state} />
       </div>
     );
   }
