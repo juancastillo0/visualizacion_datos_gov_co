@@ -7,7 +7,7 @@ const loadAllData = async recurso => {
   const allData = [];
   let data = [0];
   let i = 0;
-  while (data.length > 0) {
+  while (i < 1 && data.length > 0) {
     const resp = await fetch(
       `https://www.datos.gov.co/resource/${recurso}.json?$limit=1000&$offset=${i *
         1000}`
@@ -97,7 +97,7 @@ export default class Main extends Component {
     console.log(this.state)
     return (
       <div className="row">
-        <div className="col">
+        <div className="col mt-3">
           <h2>Visualización datos.gov.co</h2>
           <URLForm onSubmit={this.onSubmit} />
           <MetaData {...this.state}/>

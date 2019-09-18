@@ -12,7 +12,7 @@ export default function MetaData({ loading, error, metadata }) {
 //   };
   const { name, category, description, webUri, license } = metadata;
   return (
-    <table className="table table-striped" style={{maxWidth:700}}>
+    <table className="table table-striped m-auto pt-3" style={{maxWidth:700}}>
       <tbody>
         <tr>
           <th scope="row">Nombre</th>

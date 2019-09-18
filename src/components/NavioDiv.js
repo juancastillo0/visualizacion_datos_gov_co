@@ -22,6 +22,7 @@ export default class Visualizacion extends Component {
   }
 
   render() {
+    const show = !(this.props.error || this.props.loading);
     return (
       <div>
         {this.props.error
@@ -29,7 +30,7 @@ export default class Visualizacion extends Component {
           : this.props.loading
           ? "Cargando..."
           : ""}
-        <div id="navio" ref={this.setElem}></div>
+        <div id="navio" style={{display: show?"":"none"}} ref={this.setElem}></div>
       </div>
     );
   }
