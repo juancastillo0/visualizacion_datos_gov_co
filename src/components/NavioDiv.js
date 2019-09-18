@@ -24,8 +24,11 @@ export default class Visualizacion extends Component {
   render() {
     return (
       <div>
-        {this.props.error && "Error..."}
-        {this.props.loading && "Cargando..."}
+        {this.props.error
+          ? this.props.error
+          : this.props.loading
+          ? "Cargando..."
+          : ""}
         <div id="navio" ref={this.setElem}></div>
       </div>
     );
