@@ -1,3 +1,5 @@
+Modo de calificación 8pm. Metadatos de componente creativo.
+
 ## Description
 The project generates viualization from data exposed by the data.gov.co api.
 
