@@ -24,7 +24,7 @@ export default class Visualizacion extends Component {
   render() {
     const show = !(this.props.error || this.props.loading);
     return (
-      <div>
+      <div> 
         {this.props.error
           ? this.props.error
           : this.props.loading
