@@ -7,7 +7,7 @@ const loadAllData = async recurso => {
   const allData = [];
   let data = [0];
   let i = 0;
-  while (i < 1 && data.length > 0) {
+  while (data.length > 0) {
     const resp = await fetch(
       `https://www.datos.gov.co/resource/${recurso}.json?$limit=1000&$offset=${i *
         1000}`
@@ -62,7 +62,7 @@ export default class Main extends Component {
         }
 
         const resp = await fetch(
-          `http://datos.gov.co/api/views/metadata/v1/${resource}`
+          `https://datos.gov.co/api/views/metadata/v1/${resource}`
         );
         
         if (resp.ok) {
