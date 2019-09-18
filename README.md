@@ -1,4 +1,11 @@
+## Description
+The project generates viualization from data exposed by the data.gov.co api.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Dependencies
+
+The project uses [navio](https://navio.dev/) for visualization.
 
 ## Available Scripts
 
